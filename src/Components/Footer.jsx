@@ -1,10 +1,9 @@
 import React from "react";
 import './MainApp.css';
 
-function FooterPage() {
+function Footer() {
     return (
       <div>
-         
 <footer className="footer">
         <span>
             <h4>Service Client</h4>
@@ -24,13 +23,13 @@ function FooterPage() {
         </span>
         <span>
             <h4>Réseaux sociaux</h4>
-            <p>Facebook</p>
-            <p>Instagram</p>
-            <p>Twitter</p>
+            <a href="facebook">Facebook</a>
+            <br/>
+            <a href="instagram">Instagram</a>
         </span>
         </footer>
       </div>
     );
   }
 
-export default FooterPage;
+export default Footer;
