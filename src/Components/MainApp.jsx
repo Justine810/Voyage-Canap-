@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Title from './Title';
 import axios from 'axios';
 import GPSFromInputs from './GPSFromInputs'
+import RequestWindy from './RequestWindy'
 import './MainApp.css';
 
 class MainApp extends Component {
@@ -22,10 +23,12 @@ class MainApp extends Component {
 
 
   render() {
+    const { inputCoordonates } = this.state;
     return (
       <div className="background">
         <Title />
         <GPSFromInputs handleSubmit={this.handleSubmit} />
+        <RequestWindy input={inputCoordonates}/>
       </div>  
     );
   }
