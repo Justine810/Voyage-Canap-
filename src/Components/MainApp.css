@@ -1,0 +1,22 @@
+.background {
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../img/background.jpg');
+}
+
+.title {
+    text-align: center;
+    font-size: 25px;
+}
+
+.baseline {
+    text-align: justify;
+    font-size: 15px;
+}
+
+.subTitle {
+    text-align: center;
+    font-size: 18px; 
+}
