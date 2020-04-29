@@ -14,20 +14,10 @@ class MainApp extends Component {
   }
 
   handleSubmit = (fromValue, toValue) => {
-    const tempCoords = [];
-    axios.get(`https://api.opencagedata.com/geocode/v1/json?q=${encodeURI(fromValue)}&key=136c835f49be4de192ca1e0cae0fd59f&language=fr&pretty=1`)
+    axios.get(`https://api.opencagedata.com/geocode/v1/json?q=${encodeURI(fromValue)}&key=0dd82ea1ecbc46798d48a8a7da6341f9&language=fr&pretty=1`)
         .then((res) => {
-            tempCoords.push(res.data.results[0].geometry)
+            this.setState({inputCoordonates: res.data.results[0].geometry})
         })
-        .then(() => {
-            axios.get(`https://api.opencagedata.com/geocode/v1/json?q=${encodeURI(toValue)}&key=136c835f49be4de192ca1e0cae0fd59f&&language=frpretty=1`)
-            .then((res) => {
-                tempCoords.push(res.data.results[0].geometry)
-            })
-            .then(() => {
-                this.setState({inputCoordonates: tempCoords})
-            });   
-        });
       };
 
 
