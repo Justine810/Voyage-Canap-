@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Title from './Title';
+import Footer from './Footer';
 import axios from 'axios';
 import GPSFromInputs from './GPSFromInputs'
 import RequestWindy from './RequestWindy'
@@ -28,10 +29,18 @@ class MainApp extends Component {
       <div className="background">
         <Title />
         <GPSFromInputs handleSubmit={this.handleSubmit} />
+<<<<<<< HEAD
         <RequestWindy input={inputCoordonates}/>
+=======
+        <Footer />
+>>>>>>> dev
       </div>  
     );
   }
+
 }
 
 export default MainApp;
+
+
+
