@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 
-const GPSFromInputs = () => {
-    const [inputCoordonates, setInputCoordinates] = useState([])
+
+const GPSFromInputs = ({handleSubmit}) => {
     const [fromValue, setFromValue] = useState("")
     const [toValue, setToValue] = useState("")
 
@@ -14,34 +13,8 @@ const GPSFromInputs = () => {
         setToValue(e.target.value)
     }
 
-    useEffect(() => {
-        console.log('====================================');
-        console.log(inputCoordonates);
-        console.log('====================================');
-    }, [inputCoordonates])
-
-    const handleSubmit = () => {
-        const tempCoords = [];
-        axios.get(`https://api.opencagedata.com/geocode/v1/json?q=${encodeURI(fromValue)}&key=6e943d5bc7094a9ab1fa380b2273065a&pretty=1`)
-            .then((res) => {
-                //console.log(res.data.results[0].geometry);
-                tempCoords.push(res.data.results[0].geometry)
-            })
-            .then(() => {
-                axios.get(`https://api.opencagedata.com/geocode/v1/json?q=${encodeURI(toValue)}&key=6e943d5bc7094a9ab1fa380b2273065a&pretty=1`)
-                .then((res) => {
-                    //console.log(res.data.results[0].geometry);
-                    tempCoords.push(res.data.results[0].geometry)
-                })
-                .then(() => {
-                    setInputCoordinates(tempCoords)
-                });   
-        });
-    };
-
-
     return (
-        <form onSubmit={handleSubmit}>
+        <form>
             <label>
                 Ville de départ :
                 <input type="text" value={fromValue} onChange={handleChangeFrom} />
@@ -50,7 +23,7 @@ const GPSFromInputs = () => {
                 Ville d'arrivée :
                 <input type="text" value={toValue} onChange={handleChangeTo} />
             </label>
-            <input type="button" value="L'expérience commence maintenant !" onClick={handleSubmit} />
+            <input type="button" value="L'expérience commence maintenant !" onClick={() => handleSubmit(fromValue, toValue)} />
       </form>
     );
 }

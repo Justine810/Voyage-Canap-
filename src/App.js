@@ -1,11 +1,10 @@
 import React from 'react';
-import GPSFromInputs from './Components/GPSFromInputs'
-import './App.css';
+import MainApp from './Components/MainApp';
 
 function App() {
   return (
-    <div className="App">
-      <GPSFromInputs />
+    <div>
+      <MainApp />
     </div>
   );
 }
