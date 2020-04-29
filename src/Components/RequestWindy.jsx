@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import DisplayiFrame from './DisplayiFrame';
+
 
 class RequestWindy extends React.Component {
     constructor(props) {
@@ -9,7 +11,6 @@ class RequestWindy extends React.Component {
                 lat: 48.85,
                 lng: 2.35
             },
-            webCams: null,
             categories: ['city', 'beach', 'forest', 'camping', 'square', 'traffic']
         }
         this.requestAirport = this.requestAirport.bind(this)
@@ -52,36 +53,18 @@ class RequestWindy extends React.Component {
                     const i = unique.indexOf(undefined)
                     unique.splice(i, 1)
                 }
-                this.setState({ webcams: unique });
+                const formatted = unique.map(item => {
+                    return item.id ={
+                    id: item.id,
+                    url: item.player.lifetime.embed
+                    }})
+
+                this.setState({ webcams: formatted });
                 }.bind(this)
             )
           );
       }
-    //   formatNeosData(data) {
-    //     const formattedData = Object.keys(data);
-    //     /* console.log(data); */
-    //     const neosMatrix = formattedData.map(date => {
-    //       // date ==> "2015-09-08"
-    //       return data[date].map(neo => {
-    //         // neo ==> {...}
-    //         return {
-    //           name: neo.name,
-    //           magnitude: neo.absolute_magnitude_h,
-    //           closeDate: neo.close_approach_data[0].close_approach_date,
-    //           danger: neo.is_potentially_hazardous_asteroid
-    //         };
-    //       });
-    //     });
-    //     const flattenMatrix = neosMatrix.reduce((carry, current) => {
-    //       // current ==> [{...},{...}]
-    //       current.forEach(neo => carry.push(neo));
-    //       return carry;
-    //     }, []);
-    //     /* console.log(flattenMatrix); */
-    //     const filter = flattenMatrix.filter(item => item.danger === true);
-    //     /* console.log(filter); */
-    //     this.setState({ arrFilter: filter });
-    //   }
+
 
 
         // for (let i = 0; i < categories.length; i++) {
@@ -127,7 +110,7 @@ class RequestWindy extends React.Component {
 
     render() {
         const {
-            city
+            webcams
         } = this.state;
         return ( 
             <div>
@@ -135,13 +118,8 @@ class RequestWindy extends React.Component {
                 onClick = {
                     this.requestAirport
                 } > Click here </button> 
-                {
-                    city ? < iframe className = "video-frame"
-                    src = {
-                        `${city}?autoplay=1`
-                    }
-                    allowfullscreen = 'false' />: null
-                } 
+                {webcams ?  
+                webcams.map(webcam => {return <DisplayiFrame src={`${webcam.url}?autoplay=1`} id={webcam.id} />}) : null }
             </div>
         )
     }
