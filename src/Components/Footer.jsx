@@ -10,16 +10,12 @@ function Footer() {
             <a href="nous contacter">Nous contacter</a>
             <br/>
             <a href="sav">SAV</a>
-            <br/>
-            <a href="faq">FAQ</a>
         </span>
         <span>
             <h4>Informations pratiques</h4>
             <a href="mentions légales">Mentions légales</a>
             <br/>
             <a href="cdv">Conditions générales de vente</a>
-            <br/>
-            <a href="newsletter">Newsletter mensuelle</a>
         </span>
         <span>
             <h4>Réseaux sociaux</h4>
