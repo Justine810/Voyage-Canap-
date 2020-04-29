@@ -26,11 +26,7 @@ class RequestWindy extends React.Component {
         const { input } = this.props
         const {
             categories,
-            inputCoordonates
         } = this.state;
-        console.log('====================================');
-        console.log(inputCoordonates);
-        console.log('====================================');
         axios
           .all(
             categories.map(cat =>
@@ -45,21 +41,28 @@ class RequestWindy extends React.Component {
                     });
                 const ids = [];
 
-                const unique = webcams.map((webcam) => {
-                    for (let i = 0; i < webcam.length; i++) {
-                        if (ids.find(cam => cam === webcam[i].id) === undefined) {
-                            ids.push(webcam[i].id)
-                            console.log('====================================');
-                            console.log(ids);
-                            console.log('====================================');
-                            return webcam[i]
+                let unique = webcams.map((webcam) => {
+                    const final = [];
+                    for (let x = 0; x < 2; x++) {
+                        for (let i = 0; i < webcam.length; i++) {
+                            if (ids.find(cam => cam === webcam[i].id) === undefined) {
+                                ids.push(webcam[i].id)
+                                final.push(webcam[i]);
+                                break
+                            }
                         }
                     }
+                    return final;
                 })
-                if (unique.indexOf(undefined) !== -1) {
-                    const i = unique.indexOf(undefined)
-                    unique.splice(i, 1)
-                }
+                unique = unique.reduce((a, b) => {
+                    b.forEach( object => a.push(object))
+                    return a
+                    }
+                    );
+                // if (unique.indexOf(undefined) !== -1) {
+                //     const i = unique.indexOf(undefined)
+                //     unique.splice(i, 1)
+                // }
                 const formatted = unique.map(item => {
                     return item.id ={
                     id: item.id,
