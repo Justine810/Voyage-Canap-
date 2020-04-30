@@ -10,9 +10,14 @@ class MainApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputCoordonates: []
+      inputCoordonates: [], 
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  showFooter(){
+    const { displayFooter } = this.state;
+    this.setState({displayFooter : !displayFooter})
   }
 
   handleSubmit = (fromValue, toValue) => {
@@ -28,9 +33,8 @@ class MainApp extends Component {
     return (
       <div className="background">
         <Title />
-        <GPSFromInputs handleSubmit={this.handleSubmit} />
-        <RequestWindy input={inputCoordonates}/>
-        <Footer />
+        <GPSFromInputs handleSubmit={this.handleSubmit} showFooter={this.showFooter} />        
+        <RequestWindy input={inputCoordonates}/>}
       </div>  
     );
   }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-const GPSFromInputs = ({handleSubmit}) => {
+const GPSFromInputs = ({handleSubmit, showFooter}) => {
     const [fromValue, setFromValue] = useState("");
 
     const handleChangeFrom = (e) => {
@@ -14,7 +14,9 @@ const GPSFromInputs = ({handleSubmit}) => {
             <label>
                 <input className="destination" type="text" placeholder="Votre destination" value={fromValue} onChange={handleChangeFrom} />
             </label>
-            <input className="startButton" type="button" value="L'expérience commence maintenant !" onClick={() => handleSubmit(fromValue)} />
+            <input className="startButton" type="button" value="L'expérience commence maintenant !" onClick={() => {
+                handleSubmit(fromValue);
+                }} />
       </form>
     );
 }
