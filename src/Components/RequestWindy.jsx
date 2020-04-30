@@ -11,7 +11,7 @@ class RequestWindy extends React.Component {
                 lat: 25.3,
                 lng: -2
             },
-            categories: ['city', 'beach', 'forest', 'camping', 'square', 'traffic']
+            categories: ['city', 'beach', 'forest', 'camping', 'square', 'traffic', 'pool', 'resort', 'airport', 'park']
         }
         this.requestAirport = this.requestAirport.bind(this)
     }

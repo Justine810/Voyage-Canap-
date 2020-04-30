@@ -29,11 +29,8 @@ class MainApp extends Component {
       <div className="background">
         <Title />
         <GPSFromInputs handleSubmit={this.handleSubmit} />
-<<<<<<< HEAD
         <RequestWindy input={inputCoordonates}/>
-=======
         <Footer />
->>>>>>> dev
       </div>  
     );
   }
