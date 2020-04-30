@@ -1,9 +1,27 @@
 import React from 'react';
+import { Slide } from 'react-slideshow-image'
 
-function DisplayiFrame({src, id}) {
+const properties = {
+    duration: 5000,
+    transitionDuration: 500,
+    infinite: false,
+    indicators: true,
+    arrows: true
+  
+  }
+
+function DisplayiFrame({ state }) {
 
 return(
-    <iframe title={id} src={src} allowfullscreen="false" />
+    <div>
+        <Slide {...properties}>
+            {
+                state.map(obj => {return <iframe src={obj.url} title={obj.id} />})
+            } 
+        </Slide>
+        <button type="reset">Quitter</button>
+    </div>
+
 )
     
 }

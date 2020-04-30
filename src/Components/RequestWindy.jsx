@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import DisplayiFrame from './DisplayiFrame';
 
-
 class RequestWindy extends React.Component {
     constructor(props) {
         super(props);
@@ -84,8 +83,11 @@ class RequestWindy extends React.Component {
         } = this.state;
         return ( 
             <div>
-                {webcams ?  
-                webcams.map(webcam => {return <DisplayiFrame src={webcam.url} id={webcam.id} />}) : null }
+                {webcams ? 
+                <div>
+                    <DisplayiFrame state={webcams} />
+                </div>
+                 : null }
             </div>
         )
     }
