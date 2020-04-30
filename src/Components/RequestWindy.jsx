@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import DisplayiFrame from './DisplayiFrame';
+import Story from './Story';
 
 
 class RequestWindy extends React.Component {
@@ -85,7 +86,7 @@ class RequestWindy extends React.Component {
         return ( 
             <div>
                 {webcams ?  
-                webcams.map(webcam => {return <DisplayiFrame src={`${webcam.url}?autoplay=1`} id={webcam.id} />}) : null }
+                webcams.map(webcam => {return <DisplayiFrame src={webcam.url} id={webcam.id} />}) : null }
             </div>
         )
     }
