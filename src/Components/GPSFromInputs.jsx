@@ -10,7 +10,7 @@ const GPSFromInputs = ({handleSubmit}) => {
 
     return (
         <form className = "form">
-            <h2 className="subTitle">Créez votre voyage sur mesure</h2>
+            <h2 className="subTitle">Voyagez de chez vous !</h2>
             <label>
                 <input className="destination" type="text" placeholder="Votre destination" value={fromValue} onChange={handleChangeFrom} />
             </label>
