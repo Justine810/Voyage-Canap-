@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import DisplayiFrame from './DisplayiFrame';
 
-
 class RequestWindy extends React.Component {
     constructor(props) {
         super(props);
