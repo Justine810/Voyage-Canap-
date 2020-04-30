@@ -1,0 +1,112 @@
+h1 {
+    font-family: Raleway-regular;
+}
+
+.background {
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 100vh;
+background-image: url('../img/canap.jpg');
+}
+
+.title-wrapper {
+height: 25vh;
+}
+
+.kenny {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    height: 20vh;
+    z-index: 100;
+}
+
+.title {
+text-align: center;
+font-size: 50px;
+padding: 2vh;
+margin-top: 0;
+opacity: 0.7;
+background-color: #EEE;
+}
+
+.baseline {
+text-align: center;
+font-size: 18px;
+width: 100%;
+opacity: 0.7;
+background-color: #EEE;
+padding-bottom: 3vh;
+}
+
+.subTitle {
+    display: none;
+font-size: 25px; 
+margin-bottom: 2%;
+color: #EEE;
+}
+
+.form {
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-content: center;
+text-align: center;
+height: 40vh;
+}
+
+.destination {
+background-position: 9px 16px;
+padding-bottom: 1vh;
+padding-top: 1vh; 
+padding-left: 20px;
+}
+
+.startButton {
+width: 350px;
+border-radius: 20px;
+margin-top: 25px;
+margin-left: auto;
+margin-right: auto;
+padding-top: 1%;
+background-color: #444;
+border: 2px solid #444;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.startButton:hover {
+    background-color: #EEE; /* Green */
+    color: #444;
+    border: 2px solid #444;
+}
+
+.footer {
+padding: 1vh;
+background-color: lightgrey;
+color: black; 
+display: flex; 
+justify-content: space-between;
+flex-direction: row;
+margin-bottom: 0;
+text-decoration: none;
+}
+
+input {
+    width: 350px;
+    background-color: #EEE;
+    border: 2px solid #444;
+    border-radius: 20px;
+}
+
+.footer-wrapper {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
