@@ -10,15 +10,22 @@ class RequestWindy extends React.Component {
                 lat: 25.3,
                 lng: -2
             },
-            categories: ['city', 'beach', 'forest', 'camping', 'square', 'traffic', 'pool', 'resort', 'airport', 'park']
+            categories: ['city', 'beach', 'forest', 'camping', 'square', 'traffic', 'pool', 'resort', 'airport', 'park'],
+            showSlide: false
         }
         this.requestAirport = this.requestAirport.bind(this)
+        this.displaySlide = this.displaySlide.bind(this)
     }
     componentDidUpdate(prevprops, prevstate){
         if(prevprops !== this.props){
             this.requestAirport();
+            this.displaySlide(this.state)
             console.log('update')   
         }
+    }
+    displaySlide(state){
+        const {showSlide} = state;
+        this.setState({showSlide: !showSlide})
     }
     
     requestAirport() {
@@ -79,13 +86,13 @@ class RequestWindy extends React.Component {
 
     render() {
         const {
-            webcams
+            webcams, showSlide
         } = this.state;
         return ( 
             <div>
-                {webcams ? 
+                {webcams && showSlide ? 
                 <div>
-                    <DisplayiFrame state={webcams} />
+                    <DisplayiFrame state={webcams} showSlide={() => this.displaySlide(this.state)} />
                 </div>
                  : null }
             </div>

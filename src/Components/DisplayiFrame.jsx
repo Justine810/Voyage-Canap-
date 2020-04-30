@@ -10,7 +10,7 @@ const properties = {
   
   }
 
-function DisplayiFrame({ state }) {
+function DisplayiFrame({ state, showSlide }) {
 
 return(
     <div>
@@ -19,7 +19,7 @@ return(
                 state.map(obj => {return <iframe src={obj.url} title={obj.id} />})
             } 
         </Slide>
-        <button type="reset">Quitter</button>
+        <button type="reset" onClick = {showSlide}>Quitter</button>
     </div>
 
 )
