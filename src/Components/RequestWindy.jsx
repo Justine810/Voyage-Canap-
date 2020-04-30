@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import DisplayiFrame from './DisplayiFrame';
-import Story from './Story';
 
 
 class RequestWindy extends React.Component {
