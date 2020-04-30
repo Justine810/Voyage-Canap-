@@ -14,7 +14,7 @@ const GPSFromInputs = ({handleSubmit}) => {
             <label>
                 <input className="destination" type="text" placeholder="Votre destination" value={fromValue} onChange={handleChangeFrom} />
             </label>
-            <input className="startButton" type="button" value="L'expérience commence maintenant !" onClick={() => handleSubmit(fromValue)} />
+            <button className="startButton" type="button" value="L'expérience commence maintenant !" onClick={() => handleSubmit(fromValue)} >L'expérience commence maintenant !</button>
       </form>
     );
 }

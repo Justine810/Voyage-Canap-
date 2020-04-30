@@ -1,4 +1,46 @@
-.video-frame {
-    height: 70vh;
-    width: auto;
+iframe {
+    height: 75vh;
+    width: 150vh;
 }
+
+.first-div-display-frame {
+    display: flex;
+    flex-direction: column;
+}
+
+.active {
+    display: flex;
+    justify-content: center;
+}
+
+.penis {
+    position: relative;
+    top: -55vh;
+    left: auto;
+    height: 0;
+}
+
+.reset-button {
+    width: 150px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 20px;
+    margin-top: 25px;
+    background-color: #444;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+        
+.reset-button:hover {
+    background-color: #EEE; /* Green */
+    color: #444;
+    border: 2px solid #444;
+    }
+
+

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import DisplayiFrame from './DisplayiFrame';
+import './RequestWindy.css'
 
 class RequestWindy extends React.Component {
     constructor(props) {
@@ -89,9 +90,9 @@ class RequestWindy extends React.Component {
             webcams, showSlide
         } = this.state;
         return ( 
-            <div>
+            <div className="penis">
                 {webcams && showSlide ? 
-                <div>
+                <div className="frame-display">
                     <DisplayiFrame state={webcams} showSlide={() => this.displaySlide(this.state)} />
                 </div>
                  : null }

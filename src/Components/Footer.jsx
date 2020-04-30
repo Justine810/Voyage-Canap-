@@ -3,8 +3,8 @@ import './MainApp.css';
 
 function Footer() {
     return (
-      <div>
-<footer className="footer">
+      <div className="footer-wrapper">
+        <footer className="footer">
         <span>
             <h4>Service Client</h4>
             <a href="nous contacter">Nous contacter</a>
