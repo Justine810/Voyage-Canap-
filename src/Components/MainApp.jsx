@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Title from './Title';
-import Footer from './Footer';
 import axios from 'axios';
 import GPSFromInputs from './GPSFromInputs'
 import RequestWindy from './RequestWindy'

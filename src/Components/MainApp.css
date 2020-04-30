@@ -1,3 +1,7 @@
+h1 {
+    font-family: Raleway-regular;
+}
+
 .background {
 background-position: center;
 background-repeat: no-repeat;
@@ -10,13 +14,21 @@ background-image: url('../img/canap.jpg');
 height: 25vh;
 }
 
+.kenny {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    height: 20vh;
+    z-index: 100;
+}
+
 .title {
 text-align: center;
 font-size: 50px;
 padding: 2vh;
 margin-top: 0;
 opacity: 0.7;
-background-color: beige;
+background-color: #EEE;
 }
 
 .baseline {
@@ -24,7 +36,7 @@ text-align: center;
 font-size: 18px;
 width: 100%;
 opacity: 0.7;
-background-color: beige;
+background-color: #EEE;
 padding-bottom: 3vh;
 }
 
@@ -59,7 +71,7 @@ margin-left: auto;
 margin-right: auto;
 padding-top: 1%;
 background-color: #444;
-border: none;
+border: 2px solid #444;
 color: white;
 padding: 15px 32px;
 text-align: center;
