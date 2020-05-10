@@ -37,7 +37,7 @@ class RequestWindy extends React.Component {
         axios
           .all(
             categories.map(cat =>
-              axios.get(`https://api.windy.com/api/webcams/v2/list/nearby=${input.lat},${input.lng},100/category=${cat}/orderby=popularity?show=webcams:location,player,category&key=AsDAEAc6EjyD0RnHhZR3z5QYQZnNTpzP`)
+              axios.get(`https://api.windy.com/api/webcams/v2/list/nearby=${input.lat},${input.lng},100/category=${cat}/orderby=popularity?show=webcams:location,player,category&key=QnQVPwwvHy0KRnkUg4q8IcFqAj48JTRE`)
             )
           )
           .then(
